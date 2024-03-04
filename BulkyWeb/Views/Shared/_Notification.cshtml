@@ -1,0 +1,41 @@
+﻿@if (TempData["success"] != null)
+{
+    @* <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong><i class="bi bi-bell-fill"></i> @TempData["success"]</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div> *@
+    <div aria-live="polite" aria-atomic="true" class="bg-dark position-relative bd-example-toasts">
+        <div class="toast-container position-absolute p-3 top-0 end-0" id="toastPlacement">
+            <div class="toast text-white bg-success">
+                <div class="toast-header">
+                    <strong class="me-auto"><i class="bi bi-bell"></i> Notification</strong>
+                    <small>1 min ago</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    @TempData["success"]
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@if (TempData["error"] != null)
+{
+    <div aria-live="polite" aria-atomic="true" class="bg-dark position-relative bd-example-toasts">
+        <div class="toast-container position-absolute p-3 top-0 end-0" id="toastPlacement">
+            <div class="toast text-white bg-danger">
+                <div class="toast-header">
+                    <strong class="me-auto"><i class="bi bi-bell"></i> Notification</strong>
+                    <small>1 min ago</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    @TempData["error"]
+                </div>
+            </div>
+        </div>
+    </div>
+}
